@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a31874a3ff9848869b6c9c996a4eb9bf" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="MerDbModel.Activityy" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.City" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.Country" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.Direction" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.Event" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.Gender" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.Role" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.Typee" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.User" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.UserEventt" Width="1.5" PointX="12.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MerDbModel.UserJuryActivity" Width="1.5" PointX="12.75" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="MerDbModel.FK_ActivityEvent_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_ActivityEvent_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_UserJuryActivity_Activityy" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_Event_City" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_User_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_Direction_Typee" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_User_Direction" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_Event_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_UserEventt_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_User_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_UserEventt_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MerDbModel.FK_UserJuryEvent_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

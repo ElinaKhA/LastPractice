@@ -1,0 +1,100 @@
+﻿<Window x:Class="DemoPraktika.Windows.RegZhModWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoPraktika.Windows"
+        mc:Ignorable="d"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Регистрация" Height="450" Width="500" MinHeight="450" MinWidth="500" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"></RowDefinition>
+            <RowDefinition Height="193*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="tbWinName" Text="Регистрация жюри/модератора" 
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="14" FontWeight="Bold"/>
+        <Grid Grid.Row="1" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Id Number:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/> 
+            <Label Grid.Column="0" Grid.Row="1" Content="ФИО:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Пол:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="Роль:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="4" Content="Email:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="5" Content="Телефон:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="6" Content="Направление:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="8" Content="Мероприятие:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Name="fioTb" Grid.Column="1" Grid.Row="1" Height="25" Margin="5,0,0,0"/>
+            <TextBox Name="emailTb" Grid.Column="1" Grid.Row="4" Height="25" Margin="5,0,0,0" LostFocus="emailTb_LostFocus"/>
+
+            <Border Grid.Column="1" Height="25" Grid.Row="5"  BorderBrush="#99000000" BorderThickness="1" Margin="5,0,0,0" >
+                <xctk:MaskedTextBox Name="phoneTb" Mask="+7(999)-000-00-00"
+                                    Height="25" FontSize="14" VerticalContentAlignment="Center" BorderThickness="0"/>
+            </Border>
+            <ComboBox Name="directionCb" Grid.Column="1" Grid.Row="6" Height="25" Margin="5,0,0,0"/>
+            <TextBox Name="idTb" IsEnabled="False" Grid.Column="1" Grid.Row="0" Height="25" Margin="5,0,0,0" Background="#FF9A9A9A"/>
+            <ComboBox Name="genCb" Grid.Column="1" Grid.Row="2" Height="25" Margin="5,0,0,0">
+                <ComboBoxItem Content="Мужской"/>
+                <ComboBoxItem Content="Женский"/>
+            </ComboBox>
+            <ComboBox Name="roleCb" Grid.Column="1" Grid.Row="3" Height="25" Margin="5,0,0,0">
+                <ComboBoxItem Content="Модератор"/>
+                <ComboBoxItem Content="Жюри"/>
+            </ComboBox>
+            <ComboBox Name="activCb" Grid.Column="1" Grid.Row="8" Height="25" Margin="5,0,0,0"/>
+           
+            <Label Grid.Column="1" Grid.Row="7" Content="Прикрепить к мероприятию" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="8"/>
+            <CheckBox Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" 
+                      VerticalAlignment="Center" IsChecked="True"/>
+
+            <Label Grid.Column="3" Grid.Row="8" Content="Видимый пароль" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Grid.Column="2" Grid.Row="6" Content="Пароль:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="2" Grid.Row="7" Content="Повтор пароля:" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <CheckBox Name="passchb" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Right" 
+          VerticalAlignment="Center" IsChecked="False"  Checked="passchb_Checked" Unchecked="passchb_Unchecked"/>
+            <TextBox Name="passTb" Grid.Column="3" Grid.Row="6" Height="25" Margin="5,0,0,0" LostFocus="passPb_LostFocus"/>
+            <PasswordBox Name="passPb" Grid.Column="3" Grid.Row="6" Height="25" Margin="5,0,0,0" Visibility="Collapsed" LostFocus="passPb_LostFocus" PasswordChanged="passPb_PasswordChanged"/>
+            <TextBox Name="repassTb" Grid.Column="3" Grid.Row="7" Height="25" Margin="5,0,0,0"/>
+            <PasswordBox Name="repassPb" Grid.Column="3" Grid.Row="7" Height="25" Margin="5,0,0,0" Visibility="Collapsed"/>
+
+            <Button x:Name="btnOk" Content="Ок" Width="90" Height="25" 
+                     Grid.Column="2" Grid.Row="9" HorizontalAlignment="Right" Click="btnOk_Click"></Button>
+            <Button x:Name="btnCancel" Content="Отмена" Width="100" Height="25" 
+                     Grid.Column="3" Grid.Row="9" Margin="5,0,0,0" HorizontalAlignment="Left" Click="btnCancel_Click"></Button>
+            <Border MouseLeftButtonDown="userImg_MouseLeftButtonDown" BorderThickness="1" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Height="200" Width="150" BorderBrush="#FF343434">
+                <Image Stretch="Uniform" Name="userImg" MouseLeftButtonDown="userImg_MouseLeftButtonDown"
+                       Source="/Resources/foto8.jpg"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
